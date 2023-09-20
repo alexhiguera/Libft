@@ -6,39 +6,40 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 13:59:13 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/09/18 15:33:52 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/09/20 14:04:56 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+/* #include <stdio.h>
+#include <string.h> */
 
-sixe_t	ft_strlcpy(char *dest, const char *src, size_t destsize)
+size_t	ft_strlcpy(char *dest, const char *src, size_t destsize)
 {
-	char	*destino;
-	char	*origen;
 	size_t	i;
 
-	destino = dest;
-	origen = src;
 	i = 0;
-	while (i < destsize)
+	if (destsize != 0)
 	{
-		dest[i] = src[i];
-		i++;
+		while (src[i] != '0' && i < (destsize - 1))
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char	*source;
 	char	destination[20];
 
+	printf("Contenido de destino: %s", source);
 	source = "pepinillos fritos";
 	ft_strlcpy(destination, source, 20);
 	printf("Contenido de destino: %s", destination);
 	return (0);
-}
+} */
 
 /*ft_stlcpy(destino, origen, tamaño de buffer);
  Función se utiliza para copiar cadenas de caracteres (strings)
