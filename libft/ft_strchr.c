@@ -6,12 +6,9 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 18:06:46 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/09/21 12:36:41 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/09/26 15:34:54 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/* #include <string.h>
-#include <stdio.h> */
 
 /* char	*ft_strchr(const char *s, int c)
 {
@@ -26,8 +23,8 @@
 	if (*string == (unsigned char)c)
 		retunr (string);
 	return (NULL);
-} */
-
+}
+ */
 char	*ft_strchr(const char *s, int c)
 {
 	char	*string;
@@ -42,12 +39,17 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-/* int	main(void)
+/* #include <string.h>
+#include <stdio.h>
+
+int	main(void)
 {
 	char	*cadena;
+	int		a;
 
 	cadena = "funciona";
-	ft_strchr(cadena, );
+	a = 9;
+	ft_strchr(cadena, a);
 	printf("resultado de %s es: %i", cadena, a);
 	return (0);
 } */
