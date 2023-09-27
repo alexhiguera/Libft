@@ -6,37 +6,32 @@
 #    By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/21 12:51:23 by ahiguera          #+#    #+#              #
-#    Updated: 2023/09/21 13:34:50 by ahiguera         ###   ########.fr        #
+#    Updated: 2023/09/27 14:37:01 by ahiguera         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Color Aliases
-DEFAULT = \033[0;39m
-GRAY = \033[0;90m
-RED = \033[0;91m
-GREEN = \033[0;92m
-YELLOW = \033[0;93m
-BLUE = \033[0;94m
-MAGENTA = \033[0;95m
-CYAN = \033[0;96m
-WHITE = \033[0;97m
+NAME = libft.a
 
-#Variables Make
-NAME = libft.h
-CFLAS = -Wall -Wextra -Werror
-RM = rm -f
+CFLAGS = -c -Wall -Wextra -Werror
+SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c \
+			ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c strlcat.c \
+		ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c \
+			ft_memcmp.c ft_strnstr.c ft_atoi.c \
 
+OBJ = $(SRC:.c=.o)
 
+all: $(NAME)
 
+$(NAME): $(OBJ)
+	ar -rcs $(NAME) $(OBJ)
 
-src = ft_*.c
+$(OBJ): $(SRC)
+	gcc $(CFLAGS) $(SRC)
 
+clean:
+	rm -f $(OBJ)
 
-all = src
+fclean: clean
+	rm -f $(NAME)
 
-
-fclean =
-
-re
-
-clean =
+re: fclean all
