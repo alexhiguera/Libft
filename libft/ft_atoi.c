@@ -6,12 +6,11 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 16:39:44 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/09/22 19:56:56 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/09/27 19:37:18 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
@@ -19,31 +18,22 @@ int	ft_atoi(const char *str)
 	int	sign;
 	int	rest;
 
-	i = 0;
 	sign = 1;
 	rest = 0;
-	while (*str == ' ' || *str == '+')
-		str++;
-	if (str[i] == '-')
+	i = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+		i++;
+	if (str[i] == '+' || str[i] == '-')
 	{
-		sign *= -1;
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
-	while (*str && *str >= '0' && *str <= '9')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		rest = rest * 10 + (rest - '0');
-		str++;
+		rest = rest * 10 + (str[i] - '0');
+		i++;
 	}
 	return (rest * sign);
-}
-
-int	main(void)
-{
-	char	*string;
-	int		number;
-
-	string = "-123456789";
-	number = ft_atoi(string);
-	printf("El valor entero de la cadena \"%s\" es %d.\n", string, number);
-	return (0);
 }
