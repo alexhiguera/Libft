@@ -6,9 +6,11 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 13:42:20 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/09/26 15:34:18 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/10/02 18:31:12 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -23,6 +25,3 @@ char	*ft_strrchr(const char *s, int c)
 	else
 		return (NULL);
 }
-
-/* #include <string.h>
-#include <stdio.h> */

@@ -6,22 +6,11 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:29:59 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/09/20 15:34:14 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/10/02 18:28:50 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
-int	ft_strlen(char *str)
-{
-	int		i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
@@ -46,14 +35,4 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	if (dstsize < dst_len)
 		dst_len = dstsize;
 	return (dst_len + ft_strlen((char *)src));
-}
-
-int	main(void)
-{
-	char	source;
-	char	destiny;
-
-	source = "funciona";
-	printf("frasecilla: %s \n resultado: %s \n", source, destiny);
-	return (0);
 }

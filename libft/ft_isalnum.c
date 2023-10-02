@@ -6,9 +6,11 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 16:46:35 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/09/27 14:52:56 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/10/02 18:18:40 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalnum(char c)
 {

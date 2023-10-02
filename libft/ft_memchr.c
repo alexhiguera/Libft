@@ -1,13 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/02 18:20:20 by ahiguera          #+#    #+#             */
+/*   Updated: 2023/10/02 18:21:17 by ahiguera         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
 
- void *ft_memchr(const void *s, int c, int n)
+void	*ft_memchr(const void *s, int c, int n)
 {
 	char	*str;
-	int	i;
+	int		i;
 
 	i = 0;
 	str = (char *)s;
-	
 	while (i < n)
 	{
 		if ((unsigned char)str[i] == (unsigned char)c)
@@ -16,29 +27,3 @@
 	}
 	return ('\0');
 }
-
-/* #include <stdio.h>
-#include <string.h>
-#include <stddef.h>
-
-int main() {
-    char *cadena = "Hello, World!";
-    int valor_a_buscar = 'o';
-    size_t tamaño = strlen(cadena);
-
-    char *resultado = (char *)memchr(cadena, valor_a_buscar, tamaño);
-
-    if (resultado != NULL) {
-        printf("El valor '%c' se encontró en la posición %ld de la cadena.\n", valor_a_buscar, resultado - cadena);
-    } else {
-        printf("El valor '%c' no se encontró en la cadena.\n", valor_a_buscar);
-    }
-
-    return 0;
-} */
-
-/* Busca la primera aparición de un valor específico en un bloque de memoria y devuelve la posición
-
-*s -> puntero al inicio del bloque de memoria en el que deseas buscar
-c -> caracter a buscar
-n -> Es el número de bytes que se deben buscar */
