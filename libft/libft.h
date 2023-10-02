@@ -6,22 +6,31 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 21:11:51 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/09/28 14:03:57 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/10/02 16:56:01 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <stdlib.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-int		ft_atoi(const char *str);
-void	ft_bzero(void *s, size_t n);
+typedef struct s_list
+{
+	void			*contet;
+	struct s_list	*next;
+}					t_list;
+
+
 int		ft_isalnum(char c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
+
+int		ft_atoi(const char *str);
+void	ft_bzero(void *s, size_t n);
 void	*ft_memchr(const void *s, int c, int n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
