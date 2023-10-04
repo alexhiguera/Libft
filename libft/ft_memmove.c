@@ -6,7 +6,7 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 12:20:41 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/10/02 18:23:21 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/10/04 14:32:56 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,16 @@
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t	i;
-	char	*destino;
-	char	*origen;
+	char	*destiny;
+	char	*orin;
 
 	i = 0;
-	destino = (char *)dest;
-	origen = (char *)src;
+	destiny = (char *)dest;
+	orin = (char *)src;
 	while (i < n)
 	{
-		destino[i] = origen[i];
+		destiny[i] = orin[i];
 		i++;
 	}
+	return (destiny);
 }
