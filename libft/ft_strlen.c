@@ -6,13 +6,13 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:00:36 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/10/02 18:30:22 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/10/04 14:53:53 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
 	int	i;
 
