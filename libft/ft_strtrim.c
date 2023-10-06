@@ -1,19 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/06 16:50:45 by ahiguera          #+#    #+#             */
+/*   Updated: 2023/10/06 16:52:19 by ahiguera         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
 
-#include "libft.hss"
-
-static int to_trim(const char *set, char c)
+static	int	to_trim(const char *set, char c)
 {
-    int i;
-    
-    i = 0;
-    while (set[i])
-    {
-        if (c == set[i])
-            return (1);
-        i++;
-    }
-    return (0);
+	int	i;
+
+	i = 0;
+	while (set[i])
+	{
+		if (c == set[i])
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -29,13 +39,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_strlen(s1);
 	while (end > start && to_trim(s1[end - 1], set))
 		end--;
-	str = (char*)malloc(sizeof(*s1) * (end - start + 1));
+	str = (char *)malloc(sizeof(*s1) * (end - start + 1));
 	if (!str)
 		return (NULL);
 	i = 0;
 	while (start < end)
 		str[i++] = s1[start++];
-/* 	str[i] = 0;
-	free (str); */
+	str[i] = 0;
+
 	return (str);
 }
