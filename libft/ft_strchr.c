@@ -6,7 +6,7 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 18:06:46 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/10/02 18:27:17 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/10/04 17:08:50 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*string;
-	if (*string == (unsigned char)c)
+	int		i;
+	char	*s1;
+
+	i = 0;
+	s1 = (char *)s;
+	while (s[i])
 	{
-		while (string != '\0')
-			return (string);
+		if (s[i] == c)
+			return (s1);
+		i++;
 	}
-	else
-		return (string);
-	return (NULL);
+	if (c == '\0')
+		return (s1);
+	return (0);
 }
