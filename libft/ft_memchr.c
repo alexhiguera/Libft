@@ -6,7 +6,7 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 18:20:20 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/10/02 18:21:17 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/10/06 13:29:23 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	*ft_memchr(const void *s, int c, int n)
 			return ((char *)s + i);
 		i++;
 	}
-	return ('\0');
+	return (NULL);
 }
