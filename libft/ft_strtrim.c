@@ -6,7 +6,7 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 16:50:45 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/10/06 16:52:19 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/10/06 17:27:14 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (start < end)
 		str[i++] = s1[start++];
 	str[i] = 0;
-
 	return (str);
 }
