@@ -6,7 +6,7 @@
 #    By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/21 12:51:23 by ahiguera          #+#    #+#              #
-#    Updated: 2023/10/11 13:15:53 by ahiguera         ###   ########.fr        #
+#    Updated: 2023/10/16 13:15:57 by ahiguera         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,30 +30,36 @@ SRC =	ft_atoi.c			ft_bzero.c		\
 		ft_strrchr.c		ft_strtrim.c	\
 		ft_substr.c			ft_toupper.c	\
 		ft_tolower.c						\
-		
-	
 
 BONUS = ft_lstnew.c			ft_lstadd_front.c \
 		ft_lstsize.c		ft_lstadd_back.c  \
 		ft_lstlast.c		ft_lstdelone.c    \
 		ft_lstclear.c		ft_lsttiter.c     \
 		ft_lstmap.c                           \
-		
 
 OBJ = $(SRC:.c=.o)
+OBJ_BONUS = $(BONUS: .c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
 
-$(OBJ): %.o : %.c
+$(OBJ): $(SRC)
 	gcc $(CFLAGS) $(SRC)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+bonus: $(OBJ) $(OBJ_BONUS)
+		ar -rcs $(NAME) $(OBJ) $(OBJ_BONUS)
+
+$(OBJ_BONUS): $(BONUS)
+			gcc $(CFLAGS) $(BONUS)
+
+.PHONY: all clean fclean re bonus
