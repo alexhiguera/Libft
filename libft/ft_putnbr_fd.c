@@ -6,7 +6,7 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 18:48:45 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/10/09 13:42:43 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/10/16 13:54:30 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,4 @@ void	ft_putnbr_fd(int n, int fd)
 			write(fd, &num, 1);
 		}
 	}
-	return (0);
 }
