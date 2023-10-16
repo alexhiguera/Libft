@@ -6,7 +6,7 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:10:40 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/10/06 13:18:30 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/10/16 15:17:44 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,9 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	str2 = (unsigned char *)s2;
 	while (i < n)
 	{
-		if (str1[i] != str2[i])
-		{
+		if ((str1)[i] != str2[i])
 			return (str1[i] - str2[i]);
-			i++;
-		}
+		i++;
 	}
 	return (0);
 }
