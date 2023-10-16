@@ -6,7 +6,7 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 18:44:45 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/10/06 18:48:04 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/10/16 13:56:39 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	ft_putstr_fd(*s, fd);
+	ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);
 }
