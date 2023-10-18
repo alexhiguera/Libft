@@ -6,7 +6,7 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 18:27:01 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/10/16 15:28:21 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:21:08 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char	*origin;
 	char	*dest;
 
+	if (dst == NULL && src == NULL && n != 0)
+		return (NULL);
 	i = 0;
 	origin = (char *)src;
 	dest = (char *)dst;
