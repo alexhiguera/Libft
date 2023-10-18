@@ -6,7 +6,7 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 17:32:21 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/10/06 17:35:05 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/10/16 15:11:30 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, c);
+	write(fd, &c, 1);
 }
