@@ -6,7 +6,7 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 18:02:51 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/10/06 18:44:03 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/10/16 15:14:58 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,5 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		write(fd, &*s, 1);
-		i++;
-	}
+	write(fd, s, ft_strlen(s));
 }
