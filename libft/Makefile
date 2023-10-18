@@ -6,7 +6,7 @@
 #    By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/21 12:51:23 by ahiguera          #+#    #+#              #
-#    Updated: 2023/10/16 13:15:57 by ahiguera         ###   ########.fr        #
+#    Updated: 2023/10/18 11:40:06 by ahiguera         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ BONUS = ft_lstnew.c			ft_lstadd_front.c \
 		ft_lstmap.c                           \
 
 OBJ = $(SRC:.c=.o)
-OBJ_BONUS = $(BONUS: .c=.o)
+OBJ_BONUS = $(BONUS:.c=.o)
 
 all: $(NAME)
 
