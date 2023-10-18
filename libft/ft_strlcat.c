@@ -6,7 +6,7 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:29:59 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/10/16 17:56:54 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:14:59 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,23 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t			i;
-	size_t			j;
-	size_t			dst_len;
+	size_t	dst_len;
+	size_t	src_len;
+	size_t	i;
 
-	i = ft_strlen(dst);
+	src_len = ft_strlen(src);
 	dst_len = ft_strlen(dst);
-	j = 0;
-	if (dstsize && ft_strlen(dst) <= dstsize)
+	i = 0;
+	if (dstsize != 0 && ft_strlen(dst) < dstsize)
 	{
-		while (src[j] != '0' && i < (dstsize - 1))
+		while (i < src_len && i < dstsize - dst_len - 1)
 		{
-			dst[i] = src[j];
+			dst[dst_len + i] = src[i];
 			i++;
-			j++;
 		}
+		dst[dst_len + i] = '\0';
 	}
-	if (dst[i] == '\0')
-		dst_len = 0;
-	if (dstsize < dst_len)
-		dst_len = dstsize;
-	return (dst_len + ft_strlen((char *)src));
+	if (dst_len > dstsize)
+		return (dstsize + src_len);
+	return (dst_len + src_len);
 }
