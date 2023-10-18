@@ -6,7 +6,7 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:29:59 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/10/06 13:10:38 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/10/16 17:56:54 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t			i;
 	size_t			j;
-	unsigned int	dst_len;
+	size_t			dst_len;
 
 	i = ft_strlen(dst);
 	dst_len = ft_strlen(dst);
