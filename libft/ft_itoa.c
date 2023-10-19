@@ -6,7 +6,7 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:21:40 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/10/18 20:17:47 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/10/19 16:01:46 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,3 @@ char	*ft_itoa(int n)
 	result[len] = '\0';
 	return (result);
 }
-/*
-los numeros negativos tienen que gestionarse
-result
-evaluar null
-*/
