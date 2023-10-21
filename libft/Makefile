@@ -6,7 +6,7 @@
 #    By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/21 12:51:23 by ahiguera          #+#    #+#              #
-#    Updated: 2023/10/19 19:54:30 by ahiguera         ###   ########.fr        #
+#    Updated: 2023/10/21 12:32:09 by ahiguera         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,9 +35,9 @@ SRC		=	ft_atoi.c			ft_bzero.c		\
 
  BONUS	= ft_lstnew_bonus.c		ft_lstadd_front_bonus.c 	\
  		ft_lstsize_bonus.c		ft_lstadd_back_bonus.c  	\
- 		ft_lstlast_bonus.c		ft_lstdelone_bonus.c    	\
- 		ft_lstclear_bonus.c		ft_lstiter_bonus.c     		\
- 		ft_lstmap_bonus.c		ft_lstclear_bonus.c			\
+ 		ft_lstlast_bonus.c		ft_lstdelone_bonus.c		\
+ 		ft_lstclear_bonus.c		ft_lstiter_bonus.c			\
+ 		ft_lstmap_bonus.c									\
 
 
 OBJ		= $(SRC:.c=.o)
@@ -51,6 +51,12 @@ $(NAME): $(OBJ)
 $(OBJ): $(SRC)
 	gcc $(CFLAGS) $(SRC)
 
+bonus: $(OBJ) $(OBJ_BONUS)
+		ar -rcs $(NAME) $(OBJ) $(OBJ_BONUS)
+
+$(OBJ_BONUS): $(BONUS)
+			gcc $(CFLAGS) $(BONUS)
+
 clean:
 	rm -f $(OBJ) $(OBJ_BONUS)
 
@@ -58,11 +64,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-bonus: $(OBJ) $(OBJ_BONUS)
-		ar -rcs $(NAME) $(OBJ) $(OBJ_BONUS)
-
-$(OBJ_BONUS): $(BONUS)
-			gcc $(CFLAGS) $(BONUS)
 
 .PHONY: all clean fclean re bonus
