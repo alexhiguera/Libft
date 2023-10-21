@@ -6,16 +6,11 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:29:51 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/10/19 16:40:54 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:17:58 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	delete(void *content)
-{
-	free(content);
-}
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
@@ -30,4 +25,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 			(*lst) = temp;
 		}
 	}
+}
+
+void	del(void *to_free)
+{
+	free(to_free);
 }
