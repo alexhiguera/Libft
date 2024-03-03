@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+         #
+#    By: columbux <columbux@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/21 12:51:23 by ahiguera          #+#    #+#              #
-#    Updated: 2023/10/21 12:32:09 by ahiguera         ###   ########.fr        #
+#    Updated: 2024/02/20 21:10:03 by columbux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,30 +39,41 @@ SRC		=	ft_atoi.c			ft_bzero.c		\
  		ft_lstclear_bonus.c		ft_lstiter_bonus.c			\
  		ft_lstmap_bonus.c									\
 
-
-OBJ		= $(SRC:.c=.o)
+OBJ			= $(SRC:.c=.o)
 OBJ_BONUS	= $(BONUS:.c=.o)
 
-all: $(NAME)
+all: 			$(NAME)
+	
+$(NAME): 		$(OBJ)
+					@ar -rcs $(NAME) $(OBJ)
+	
+$(OBJ): 		$(SRC)
+					@gcc $(CFLAGS) $(SRC) 
+					@echo $(GREEN) "Compililation successfully!\n"
+	
+bonus: 			$(OBJ) $(OBJ_BONUS)
+					@ar -rcs $(NAME) $(OBJ) $(OBJ_BONUS)
 
-$(NAME): $(OBJ)
-	ar -rcs $(NAME) $(OBJ)
-
-$(OBJ): $(SRC)
-	gcc $(CFLAGS) $(SRC)
-
-bonus: $(OBJ) $(OBJ_BONUS)
-		ar -rcs $(NAME) $(OBJ) $(OBJ_BONUS)
-
-$(OBJ_BONUS): $(BONUS)
-			gcc $(CFLAGS) $(BONUS)
+$(OBJ_BONUS): 	$(BONUS)
+					@gcc $(CFLAGS) $(BONUS)
+					@echo $(CYAN) "Compiling Bonus..."
 
 clean:
-	rm -f $(OBJ) $(OBJ_BONUS)
+					@rm -f $(OBJ) $(OBJ_BONUS)
 
-fclean: clean
-	rm -f $(NAME)
+fclean: 		clean
+					@rm -f $(NAME)
+					@echo $(YELLOW) "Cleaner done"
 
-re: fclean all
+re: 				fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY:	all clean fclean re bonus
+
+#------------------------------------------------#
+#   ASCII ART                                    #
+RED		    := "\033[1;31m"
+GREEN		:= "\033[1;32m"
+YELLOW		:= "\033[1;33m"
+BLUE		:= "\033[1;34m"
+CYAN 		:= "\033[1;36m"
+#------------------------------------------------#
